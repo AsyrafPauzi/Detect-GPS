@@ -42,7 +42,7 @@ public class MockLocationChecker extends CordovaPlugin{
     public boolean execute(String action, JSONArray data, final CallbackContext callbackContext) throws JSONException {
 
         if (action.equals("check")) {
-            if (android.os.Build.VERSION.SDK_INT < 22) {
+            if (android.os.Build.VERSION.SDK_INT < 18) {
                 if (Secure.getString(this.cordova.getActivity().getContentResolver(), Secure.ALLOW_MOCK_LOCATION).equals("0")){
                     objGPS.put("info","mock-false");
                   statusMock = "mock-false";
